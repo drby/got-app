@@ -1,0 +1,10 @@
+.navbar > .container {
+    max-width: 100%;
+    padding: 1vh;
+  }
+
+  .navbar{
+    margin-bottom: 3vh;
+    font-weight: bold;
+    font-family: 'Outfit', sans-serif;
+  }

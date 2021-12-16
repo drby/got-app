@@ -1,10 +1,28 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
-function App() {
+//Components
+import Dashboard from './components/Dashboard/Dashboard'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+
+// Data
+import { getAllBooks } from './services'
+
+const App = () => {
+
+  useEffect(() => {
+    getAllBooks().then((result) => {
+      console.log(result)
+    });
+  }, []);
+
   return (
     <div className="App">
-      <h1>hi</h1>
+      <Header />
+      <Dashboard />
+      <Footer />
+      
     </div>
   );
 }
