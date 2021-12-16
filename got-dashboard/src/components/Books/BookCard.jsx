@@ -1,36 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 //components
 import Collapsible from "../Collapsible/Collapsible";
 
 //icons
-import { GoBook } from 'react-icons/go';
+import { CgDetailsMore } from 'react-icons/cg'
+import { BsPerson } from 'react-icons/bs'
 
 //css
 import './CSS/bookCard.css'
 
 //Bootstrap
 import Card from 'react-bootstrap/Card'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
+
+//fetch character method
+import { getCharacter } from '../../services'
 
 const BookCard = ({book}) => {
+
+    const [characters, setCharacters] = useState([]);
+
+    useEffect(() => {
+        book.characters.forEach(character => {
+            getCharacter(character).then( result => console.log(result))
+        })
+    },[])
+
+    console.log(characters);
+
     return(
 
         <Collapsible book={book}>
-        <h1>hey</h1>
-            {/* <Card className="book-card" style={{ width: '18rem' }}>
-                <Card.Body as='div' style={{display: "flex", justifyContent: "space-between"}}>
-                    <Card.Text className='book-text' as="div"><div><GoBook id='book-icon' /> - {book.name} by {book.authors}</div></Card.Text>
-                    <DropdownButton variant="secondary" size="sm">
-                        <Dropdown.Item as='div'>
-                            <Card className="book-card" style={{ width: '18rem' }}>
-                                <Card.Text className='book-text' as="div"><div>Details: {book.numberOfPages} pages, publisher: {book.publisher}, country: {book.country}</div></Card.Text>
-                            </Card>
-                        </Dropdown.Item>
-                    </DropdownButton>
-                </Card.Body>
-            </Card> */}
+                <Card.Body as='div'>
+                    <Card.Text className='details-text' as="div"><div><CgDetailsMore id='details-icon' /> Details: </div><div className="details-content">number of pages: {book.numberOfPages}</div><div className="details-content">publisher: {book.publisher}</div><div className="details-content">country: {book.country}</div></Card.Text>
+                    <Card.Text className='details-text' as="div">
+                        <div><BsPerson id='details-icon' /> Characters: </div><div className="characters-content">
+                            {book.characters.map((character, index) =>
+                                <div key={index}>{character}</div>
+                            )}
+                        </div>
+                    </Card.Text>
+                </Card.Body> 
         </Collapsible>
     )
 }

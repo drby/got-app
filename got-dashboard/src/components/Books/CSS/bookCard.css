@@ -11,9 +11,26 @@
     color: rgb(142, 18, 158);
 }
 
+#details-icon{
+    color: black;
+}
+
 .book-text {
     font-weight: 350;
     display: flex;
     justify-content: space-between;
     gap: 5vh
+}
+
+.details-text{
+    font-weight: 350;
+    display: flex;
+    justify-content: space-between;
+    gap: 5vh;
+    align-items: center;
+}
+
+.details-content {
+    align-items: center;
+    margin: 0;
 }

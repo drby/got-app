@@ -6,8 +6,6 @@ import { GoBook } from 'react-icons/go';
 
 //Bootstrap
 import Card from 'react-bootstrap/Card'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
 
 const Collapsible = ({ open, children, book }) => {
   const [isOpen, setIsOpen] = useState(open);
@@ -34,26 +32,6 @@ const Collapsible = ({ open, children, book }) => {
             <div>{isOpen && <div className="p-3">{children}</div>}</div>
           </div>
       </Card>
-
-
-      {/* <div className="card">
-        <div>
-          <div className="p-3 border-bottom d-flex justify-content-between">
-            <h6 className="font-weight-bold">{book.title}</h6>
-            <button type="button" className="btn" onClick={handleFilterOpening}>
-              {!isOpen ? (
-                <BsChevronCompactDown />
-              ) : (
-                <BsChevronCompactUp />
-              )}
-            </button>
-          </div>
-        </div>
-
-        <div className="border-bottom">
-          <div>{isOpen && <div className="p-3">{children}</div>}</div>
-        </div>
-      </div> */}
     </>
   );
 };
