@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-const Dashboard = () => {
+//components
+import Books from '../Books/Books'
+
+//CSS
+import './dashboard.css'
+
+const Dashboard = ({data}) => {
 
     return(
-        <h1>hey</h1>
+        <div className='dashboard-container'>
+            <Books books={data}/>
+        </div>
     )
 }
 

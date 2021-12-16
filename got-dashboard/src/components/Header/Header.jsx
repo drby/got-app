@@ -1,7 +1,7 @@
 import React from 'react';
 
 //assets
-import Logo from '../../assets/logo6.png'
+import Logo from '../../assets/got-icon4.png'
 
 //Bootstrap
 import Navbar from 'react-bootstrap/Navbar'
@@ -12,7 +12,7 @@ import './header.css'
 
 const Header = () => {
   return(
-    <Navbar bg="dark" variant="dark" sticky="top">
+    <Navbar bg="light" variant="light" sticky="top">
       <Container>
         <Navbar.Brand href="#home">
           <img

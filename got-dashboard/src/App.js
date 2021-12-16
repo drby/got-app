@@ -11,18 +11,19 @@ import { getAllBooks } from './services'
 
 const App = () => {
 
+  const [books, setBooks] = useState([]);
+
   useEffect(() => {
     getAllBooks().then((result) => {
-      console.log(result)
+      setBooks(result)
     });
   }, []);
 
   return (
     <div className="App">
       <Header />
-      <Dashboard />
+      <Dashboard data={books}/>
       <Footer />
-      
     </div>
   );
 }

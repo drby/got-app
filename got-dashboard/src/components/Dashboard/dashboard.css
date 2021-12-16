@@ -1,0 +1,11 @@
+.dashboard-container {
+    min-height: 100vh;
+}
+
+h2{
+    padding: 1vh;
+    margin: 3vh;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 100;
+    color: rgba(0, 0, 0, 0.603);
+}

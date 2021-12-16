@@ -1,0 +1,19 @@
+.book-card{
+    margin: 1vh auto;
+    width: 95% !important;
+}
+
+.book-card:hover{
+    background-color: #f8f9faaf;
+}
+
+#book-icon {
+    color: rgb(142, 18, 158);
+}
+
+.book-text {
+    font-weight: 350;
+    display: flex;
+    justify-content: space-between;
+    gap: 5vh
+}

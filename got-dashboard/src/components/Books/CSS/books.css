@@ -1,0 +1,10 @@
+.book-card-container {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column-reverse;
+    padding: 1vh;
+    margin: 2vh;
+    border-radius: .65rem;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
