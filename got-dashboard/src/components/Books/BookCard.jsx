@@ -18,15 +18,13 @@ import { getCharacter } from '../../services'
 
 const BookCard = ({book}) => {
 
-    const [characters, setCharacters] = useState([]);
-
+    const [characterNames, setCharacterNames] = useState([]);
+    
     useEffect(() => {
-        book.characters.forEach(character => {
-            getCharacter(character).then( result => console.log(result))
-        })
-    },[])
-
-    console.log(characters);
+        //console.log(book.characters[0])
+        book.characters.map(character => getCharacter(book.characters[0]).then(result => setCharacterNames([...characterNames, result.name])))
+        console.log(characterNames);
+    })
 
     return(
 
@@ -35,9 +33,6 @@ const BookCard = ({book}) => {
                     <Card.Text className='details-text' as="div"><div><CgDetailsMore id='details-icon' /> Details: </div><div className="details-content">number of pages: {book.numberOfPages}</div><div className="details-content">publisher: {book.publisher}</div><div className="details-content">country: {book.country}</div></Card.Text>
                     <Card.Text className='details-text' as="div">
                         <div><BsPerson id='details-icon' /> Characters: </div><div className="characters-content">
-                            {book.characters.map((character, index) =>
-                                <div key={index}>{character}</div>
-                            )}
                         </div>
                     </Card.Text>
                 </Card.Body> 

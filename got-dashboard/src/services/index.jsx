@@ -11,7 +11,7 @@ export async function getAllBooks() {
     }
 }
 
-export async function getCharacter({url}) {
+export async function getCharacter(url) {
     try{
         const response = await axios.get(url);
         //console.log('response  ', response)
